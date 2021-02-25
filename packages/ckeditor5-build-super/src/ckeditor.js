@@ -7,7 +7,7 @@ import '../theme/theme.css'
 
 // The editor creator to use.
 import BalloonEditorBase from '@ckeditor/ckeditor5-editor-balloon/src/ballooneditor'
-import ClassicEditorBase from '@ckeditor/ckeditor5-editor-classic/src/classiceditor';
+import ClassicEditorBase from '@ckeditor/ckeditor5-editor-classic/src/classiceditor'
 
 import RealTimeCollaborativeEditing from '@ckeditor/ckeditor5-real-time-collaboration/src/realtimecollaborativeediting'
 import RealTimeCollaborativeComments from '@ckeditor/ckeditor5-real-time-collaboration/src/realtimecollaborativecomments'
@@ -47,10 +47,17 @@ import RemoveFormat from '@ckeditor/ckeditor5-remove-format/src/removeformat'
 import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment'
 import HorizontalLine from '@ckeditor/ckeditor5-horizontal-line/src/horizontalline'
 
-class CollaborativeSceneEditor extends BalloonEditorBase {}
-class BasicSceneEditor extends BalloonEditorBase {}
-class CollaborativeClassicEditor extends ClassicEditorBase {}
-class BasicClassicEditor extends ClassicEditorBase {}
+class CollaborativeSceneEditor extends BalloonEditorBase {
+}
+
+class BasicSceneEditor extends BalloonEditorBase {
+}
+
+class CollaborativeClassicEditor extends ClassicEditorBase {
+}
+
+class BasicClassicEditor extends ClassicEditorBase {
+}
 
 let basePlugins = [
 	Essentials,
@@ -86,7 +93,7 @@ let basePlugins = [
 	RemoveFormat,
 	Narrateselection,
 	Alignment,
-	HorizontalLine
+	HorizontalLine,
 ]
 
 let collaborativePlugins = [
@@ -153,30 +160,56 @@ const selectionToolbarItems = [
 	'removeFormat',
 ]
 
-
+// scene editors
 CollaborativeSceneEditor.defaultConfig = Object.assign({}, baseConfig, {
-	blockToolbar: blockToolbar.concat(['|', 'comment', 'trackChanges']),
+	blockToolbar: blockToolbar,
 	toolbar: {
-		items: selectionToolbarItems,
-	}
-})
-CollaborativeClassicEditor.defaultConfig = Object.assign({}, baseConfig, {
-	blockToolbar: blockToolbar.concat(['|', 'comment', 'trackChanges']),
-	toolbar: {
-		items: selectionToolbarItems,
-	}
+		items: selectionToolbarItems.concat(['|', 'comment', 'trackChanges']),
+	},
 })
 BasicSceneEditor.defaultConfig = Object.assign({}, baseConfig, {
-	blockToolbar: blockToolbar.concat(['|', 'comment', 'trackChanges']),
+	blockToolbar: blockToolbar,
 	toolbar: {
 		items: selectionToolbarItems,
-	}
+	},
+})
+
+let classicToolbarItems = [
+	'heading',
+	'|',
+	'bold',
+	'italic',
+	'underline',
+	'strikethrough',
+	'subscript',
+	'superscript',
+	'|',
+	'bulletedList',
+	'numberedList',
+	'indent',
+	'outdent',
+	'blockQuote',
+	'alignment',
+	'|',
+	'fontColor',
+	'fontBackgroundColor',
+	'|',
+	'removeFormat',
+]
+
+CollaborativeClassicEditor.defaultConfig = Object.assign({}, baseConfig, {
+	blockToolbar: selectionToolbarItems.concat(['comment']),
+	toolbar: {
+		items: classicToolbarItems.concat(['|', 'trackChanges']),
+		shouldNotGroupWhenFull: true,
+	},
 })
 BasicClassicEditor.defaultConfig = Object.assign({}, baseConfig, {
-	blockToolbar: blockToolbar.concat(['|', 'comment', 'trackChanges']),
+	blockToolbar: selectionToolbarItems,
 	toolbar: {
-		items: selectionToolbarItems,
-	}
+		items: classicToolbarItems,
+		shouldNotGroupWhenFull: true,
+	},
 })
 
 export default {
