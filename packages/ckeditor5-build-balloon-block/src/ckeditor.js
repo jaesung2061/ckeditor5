@@ -30,6 +30,7 @@ import PasteFromOffice from '@ckeditor/ckeditor5-paste-from-office/src/pastefrom
 import Table from '@ckeditor/ckeditor5-table/src/table';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
 import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformation';
+import AutoSave from '@ckeditor/ckeditor5-autosave/src/autosave';
 
 import '../theme/theme.css';
 
@@ -60,7 +61,8 @@ BalloonEditor.builtinPlugins = [
 	PasteFromOffice,
 	Table,
 	TableToolbar,
-	TextTransformation
+	TextTransformation,
+	AutoSave
 ];
 
 // Editor configuration.
@@ -74,10 +76,7 @@ BalloonEditor.defaultConfig = {
 		'indent',
 		'outdent',
 		'|',
-		'imageUpload',
 		'blockQuote',
-		'insertTable',
-		'mediaEmbed',
 		'|',
 		'undo',
 		'redo'
@@ -86,7 +85,10 @@ BalloonEditor.defaultConfig = {
 		items: [
 			'bold',
 			'italic',
-			'link'
+			'link',
+			'strikethrough',
+			'subscript',
+			'superscript'
 		]
 	},
 	image: {
