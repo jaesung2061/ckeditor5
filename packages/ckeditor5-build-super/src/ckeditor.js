@@ -46,6 +46,7 @@ import FontBackgroundColor from '@ckeditor/ckeditor5-font/src/fontbackgroundcolo
 import RemoveFormat from '@ckeditor/ckeditor5-remove-format/src/removeformat'
 import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment'
 import HorizontalLine from '@ckeditor/ckeditor5-horizontal-line/src/horizontalline'
+import Autosave from '@ckeditor/ckeditor5-autosave/src/autosave'
 
 class CollaborativeSceneEditor extends BalloonEditorBase {
 }
@@ -94,6 +95,7 @@ let basePlugins = [
 	Narrateselection,
 	Alignment,
 	HorizontalLine,
+	Autosave,
 ]
 
 let collaborativePlugins = [
