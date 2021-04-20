@@ -36,7 +36,7 @@ import Paragraph from '@ckeditor/ckeditor5-paragraph/src/paragraph'
 import PasteFromOffice from '@ckeditor/ckeditor5-paste-from-office/src/pastefromoffice'
 import Table from '@ckeditor/ckeditor5-table/src/table'
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar'
-import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformation'
+// import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformation'
 import Underline from '@ckeditor/ckeditor5-basic-styles/src/underline'
 import Strikethrough from '@ckeditor/ckeditor5-basic-styles/src/strikethrough'
 import Subscript from '@ckeditor/ckeditor5-basic-styles/src/subscript'
@@ -84,7 +84,7 @@ let basePlugins = [
 	PasteFromOffice,
 	Table,
 	TableToolbar,
-	TextTransformation,
+	// TextTransformation,
 	Underline,
 	Strikethrough,
 	Subscript,
